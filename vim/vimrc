@@ -1,15 +1,30 @@
+" vImproved!
 set nocompatible
+
+" Disable filestype plugin
 filetype off
 
+" Setup Vundle
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
+" Vundle Bundles
 Plugin 'gmarik/Vundle.vim'
 Plugin 'tpope/vim-vinegar'
+Plugin 'morhetz/gruvbox'
 
+" Finish Vundle
 call vundle#end()
 
+" Reenable filetype Plugin
 filetype plugin indent on
 
+" Color Scheme
+colorscheme gruvbox
+set background=dark
+" Do not use italics
+let g:gruvbox_italic=0
+
+" Sensible Defaults
 syntax on
 set backspace=indent,eol,start
