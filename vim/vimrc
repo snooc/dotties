@@ -28,3 +28,48 @@ let g:gruvbox_italic=0
 " Sensible Defaults
 syntax on
 set backspace=indent,eol,start
+set autochdir
+set ruler
+set number
+set relativenumber
+set autoread
+set visualbell
+set nuw=6
+set history=1000
+set encoding=utf8
+set colorcolumn=80
+set previewheight=10
+set backupdir=~/.tmp
+set directory=~/.tmp
+set list listchars=tab:\|\ ,trail:·
+set wildignore+=*.o,*.obj,*DS_Store*,tmp/*,*/log/*,.git/*,node_modules/*,.vagrant/*,.tmp/*,.librarian/*,.git*,.ruby-version,*.lock,.bundle/*,.netrwhist
+
+" Netrw
+let g:netrw_localrmdir="rm -r"
+
+" Additional Syntax Highlighting
+autocmd BufNew,BufRead *.json set ft=javascript
+autocmd BufNew,BufRead Podfile set ft=ruby
+autocmd BufNew,BufRead Vagrantfile set ft=ruby
+autocmd BufNew,BufRead Gemfile set ft=ruby
+
+" Filetypes
+augroup snoocfiletypes
+  autocmd!
+  autocmd FileType ruby,eruby setlocal ai et sw=2 sts=2 ts=2
+  autocmd FileType javascript setlocal ai et sw=2 sts=2 ts=2
+  autocmd FileType php setlocal ai et sw=4 sts=4 ts=4
+  autocmd FileType html setlocal ai et sw=4 sts=4 ts=4
+  autocmd FileType markdown setlocal ai et sw=4 sts=4 ts=4 tw=80
+  autocmd FileType go setlocal ai sw=4 ts=4
+augroup END
+
+" Mouse
+if has("mouse")
+  set mouse=a
+  if &term =~ "xterm" || &term =~ "screen"
+    set ttymouse=xterm2
+
+    autocmd VimEnter,FocusGained,BufEnter * set ttymouse=xterm2
+  endif
+endif
