@@ -1,6 +1,6 @@
 DOTFILES := $(shell pwd)
 
-install: clean _vim _tmux
+install: clean _vim _tmux _slate
 
 _vim:
 	ln -fns $(DOTFILES)/vim/vim ${HOME}/.vim
@@ -15,7 +15,8 @@ clean_vim:
 _tmux:
 	ln -fs $(DOTFILES)/tmux/tmux.conf ${HOME}/.tmux.conf
 
-clean_tmux:
+_slate:
+	ln -fs $(DOTFILES)/slate/slate.js ${HOME}/.slate.js
 
 clean: clean_vim
 
